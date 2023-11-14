@@ -1,0 +1,17 @@
+s1= 0
+numar = 7
+
+while numar <= 98:
+    s1 += numar
+    numar += 7
+
+
+p2= 1
+numar = 3
+
+while numar <= 33:
+    p2 *= numar
+    numar += 3
+
+print("Suma primului șir:", s1)
+print("Produsul celui de-al doilea șir:", p2)
