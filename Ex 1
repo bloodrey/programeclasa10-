@@ -1,0 +1,3 @@
+f = open('Numele.txt','r')
+nume = f.readline()
+print("Bine ai venit,", nume, "!")
