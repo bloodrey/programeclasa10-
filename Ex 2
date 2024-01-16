@@ -1,0 +1,15 @@
+f=open('Sirul.txt', 'r')
+sir = f.readline()
+majuscule= 0
+cifre= 0
+caracteresp= 0
+for caracter in sir:
+    if caracter.isupper():
+        majuscule += 1
+    if caracter.isdigit():
+        cifre += 1
+    if caracter in "()*/+-=^":
+        caracteresp += 1
+print("Numar majuscule este:", majuscule)
+print("Numar cifre este:", cifre)
+print("Numar caractere speciale este:", caracteresp)
