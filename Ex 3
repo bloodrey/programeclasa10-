@@ -1,0 +1,9 @@
+f= open('PatruCuvinte.txt','r')
+c1 = f.readline().strip()
+c2 = f.readline().strip()
+c3 = f.readline().strip()
+c4 = f.readline().strip()
+
+fr = c1 + ' '+ c2 + ' '+ c3+' ' +c4+ '.'
+print(f"Cuvintele sunt: {c1} {c2} {c3} {c4}")
+print(f"Fraza formata este: {fr}")
