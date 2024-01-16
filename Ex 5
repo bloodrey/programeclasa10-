@@ -1,0 +1,6 @@
+f = open('CNP.txt','r')
+cnp = f.read()
+if len(cnp) == 13 and cnp.isdigit():
+    print("CNP este corect")
+else:
+    print("CNP este gresit")
