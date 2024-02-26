@@ -1,0 +1,21 @@
+with open("input.txt") as f:
+    _, k, a, b = [int(x) for x in f.readline().split()]
+    greutati = [int(x) for x in f.readline().split()]
+
+ideale_initial = 0
+for greutate in greutati:
+    if a <= greutate <= b:
+        ideale_initial += 1
+
+ideale_finale = ideale_initial
+
+for _ in range(k):
+    for i in range(len(greutati)):
+        greutati[i] += 1 if greutati[i] < a else -1 if greutati[i] > b else 0
+    ideale_finale = 0
+    for greutate in greutati:
+        if a <= greutate <= b:
+            ideale_finale += 1
+
+with open("rezultate.txt", "w") as f:
+    f.write(f"a) {ideale_initial} persoane\nb) {ideale_finale} persoane\n")
