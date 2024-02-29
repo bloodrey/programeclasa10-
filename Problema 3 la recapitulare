@@ -1,0 +1,23 @@
+# Citire din fișierul de intrare
+with open(“caleadepecalculator.txt”, “r”) as f:
+    n, k, a, b = map(int, f.readline().split())
+    greutati = list(map(int, f.readline().split()))
+
+# a) Numărul de persoane cu greutate ideală la începutul tratamentului
+greutate_ideala_inceput = sum(1 for greutate in greutati if a <= greutate <= b)
+
+# b) Numărul persoanelor cu greutate ideală după cele k zile de tratament
+greutate_ideala_dupa_tratament = greutate_ideala_inceput
+for greutate in greutati:
+    for zi in range(k):
+        if greutate < a:
+            greutate += 1
+        elif greutate > b:
+            greutate -= 1
+    if a <= greutate <= b:
+        greutate_ideala_dupa_tratament += 1
+
+# Scriere în fișierul de ieșire
+with open(“caleacalculator.txt”, “w”) as f:
+    f.write(f”{greutate_ideala_inceput} persoane\n”)
+    f.write(f”{greutate_ideala_dupa_tratament} persoane\n”)
